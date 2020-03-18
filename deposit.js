@@ -1,16 +1,20 @@
 function AlertError() {
-    if (initial <= 0) {
+    if (initial <= 0 ||
+        isNaN(initial)) {
         console.log('начальная сумма введена некорректно');
     }
-    if (monthly < 0) {
+    if (monthly < 0 ||
+        isNaN(monthly)) {
         console.log('сумма пополнения введена некорректно');
     }
     if (percent <= 0 ||
-        percent > 100) {
+        percent > 100 ||
+        isNaN(percent)) {
         console.log('процентная ставка введена некорректно');
     }
     if (termDays <= 0 ||
-        !Number.isInteger(termDays)) {
+        !Number.isInteger(termDays) ||
+        isNaN(termDays)) {
         console.log('срок вклада введен некорректно');
     }
 
