@@ -10,7 +10,7 @@ function AlertError() {
         console.log('процентная ставка введена некорректно');
     }
     if (termDays <= 0 ||
-        !Number.isInteger(term)) {
+        !Number.isInteger(termDays)) {
         console.log('срок вклада введен некорректно');
     }
 
@@ -22,7 +22,7 @@ function calculateDeposit(initial, monthly, percent, termDays) {
         percent <= 0 ||
         percent > 100 ||
         termDays <= 0 ||
-        !Number.isInteger(term)) {
+        !Number.isInteger(termDays)) {
         AlertError();
         document.getElementById("error").className = 'errorVisible';
         return NaN;
