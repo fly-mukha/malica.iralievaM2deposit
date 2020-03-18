@@ -29,3 +29,17 @@ button {
     border-radius: 3px;
     color: honeydew;
 }
+
+.errorHidden {
+    display: none; 
+    color: red;
+    font-size: 12px;
+    text-align: center;
+}
+
+.errorVisible {
+    display: block;
+    color: red;
+    font-size: 12px;
+    text-align: center;
+}

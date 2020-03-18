@@ -1,4 +1,4 @@
-function calculateDeposit(initial, monthly, percent, termDays) {
+function AlertError() {
     if (initial <= 0) {
         console.log('начальная сумма введена некорректно');
     }
@@ -11,9 +11,21 @@ function calculateDeposit(initial, monthly, percent, termDays) {
     }
     if (termDays <= 0 ||
         !Number.isInteger(term)) {
-        console.log(termDays <= 0);
-        console.log(!Number.isInteger(term)); 
         console.log('срок вклада введен некорректно');
+    }
+
+}
+
+function calculateDeposit(initial, monthly, percent, termDays) {
+    if (initial <= 0 ||
+        monthly < 0 ||
+        percent <= 0 ||
+        percent > 100 ||
+        termDays <= 0 ||
+        !Number.isInteger(term)) {
+        AlertError();
+        document.getElementById("error").className = 'errorVisible';
+        return NaN;
     }
 
     let currentAmount = initial;
@@ -30,7 +42,10 @@ function getValues() {
     monthly = Number(document.getElementById("inputMonthly").value);
     percent = Number(document.getElementById("inputPercent").value);
     termDays = Number(document.getElementById("inputTerm").value);
-    alert(calculateDeposit(initial, monthly, percent, termDays));
+    let Result = calculateDeposit(initial, monthly, percent, termDays);
+    if (!isNaN(Result)) {
+        alert(`Текущая сумма на вкладе ${Result}`);
+    }
 }
 
 let initial;
