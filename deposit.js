@@ -38,6 +38,7 @@ function calculateDeposit(initial, monthly, percent, termDays) {
 }
 
 function getValues() {
+    document.getElementById("error").className = 'errorHidden';
     initial = Number(document.getElementById("inputInitial").value);
     monthly = Number(document.getElementById("inputMonthly").value);
     percent = Number(document.getElementById("inputPercent").value);
