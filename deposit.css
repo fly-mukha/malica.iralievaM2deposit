@@ -4,7 +4,8 @@ body {
 
 section {
     text-align: center;
-    margin: 0 25% 0 25%;
+    margin: auto;
+    max-width: 400px;
 }
 
 input {
