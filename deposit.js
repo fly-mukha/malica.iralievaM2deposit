@@ -22,7 +22,11 @@ function calculateDeposit(initial, monthly, percent, termDays) {
         percent <= 0 ||
         percent > 100 ||
         termDays <= 0 ||
-        !Number.isInteger(termDays)) {
+        !Number.isInteger(termDays) ||
+        isNaN(initial) ||
+        isNaN(monthly) ||
+        isNaN(percent) ||
+        isNaN(termDays)) {
         AlertError();
         document.getElementById("error").className = 'errorVisible';
         return NaN;
