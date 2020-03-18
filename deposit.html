@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Расчёт вклада</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="deposit.css">
+</head>
+
+<body>
+    <section>
+        <h2> Рассчёт вклада </h2>
+        <div class='inputField'>
+            <p> Начальная сумма вклада, ₽ </p>
+            <input type="text" id="inputInitial" />
+        </div>
+        <div class='inputField'>
+            <p> Сумма ежемесячного пополнения, ₽ </p>
+            <input type="text" id="inputMonthly" />
+
+        </div>
+        <div class='inputField'>
+            <p> Процентная ставка, % </p>
+            <input type="text" id="inputPercent" />
+        </div>
+        <div class='inputField'>
+            <p> Срок вклада, дней </p>
+            <input type="text" id="inputTerm" />
+        </div>
+
+        <button id='CountButton'> Рассчитать </button>
+    </section>
+
+
+    <script src='deposit.js'> </script>
+</body>
+
+</html>

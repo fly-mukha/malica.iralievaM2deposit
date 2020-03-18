@@ -1,0 +1,31 @@
+body {
+    font-family: roboto, monospace;
+}
+
+section {
+    text-align: center;
+    margin: 0 25% 0 25%;
+}
+
+input {
+    width: 25%;
+    height: 20px;  
+}
+
+p {
+    display: inline-block;
+    min-width: 260px;
+    font-size: 14px;
+    text-align: left;
+}
+
+button {
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: rgb(82, 150, 82);
+    border: 0px;
+    border-radius: 3px;
+    color: honeydew;
+}
