@@ -1,4 +1,4 @@
-function AlertError() {
+function alertError() {
     if (initial <= 0 ||
         isNaN(initial)) {
         console.log('начальная сумма введена некорректно');
@@ -17,7 +17,6 @@ function AlertError() {
         isNaN(termDays)) {
         console.log('срок вклада введен некорректно');
     }
-
 }
 
 function calculateDeposit(initial, monthly, percent, termDays) {
@@ -31,36 +30,32 @@ function calculateDeposit(initial, monthly, percent, termDays) {
         isNaN(monthly) ||
         isNaN(percent) ||
         isNaN(termDays)) {
-        AlertError();
+        alertError();
         document.getElementById("error").className = 'errorVisible';
         return NaN;
     }
 
     let currentAmount = initial;
-    let termMonths = termDays / 30;
+    let termMonths = Math.floor(termDays / 30);
 
     for (let i = 0; i < termMonths; i++) {
+        console.log(currentAmount);
         currentAmount += monthly + currentAmount * percent * 0.01 / 12;
     }
-    return Math.floor(currentAmount);
+    return currentAmount;
 }
 
 function getValues() {
     document.getElementById("error").className = 'errorHidden';
-    initial = Number(document.getElementById("inputInitial").value);
-    monthly = Number(document.getElementById("inputMonthly").value);
-    percent = Number(document.getElementById("inputPercent").value);
-    termDays = Number(document.getElementById("inputTerm").value);
-    let Result = calculateDeposit(initial, monthly, percent, termDays);
-    if (!isNaN(Result)) {
-        alert(`Текущая сумма на вкладе ${Result}`);
+    let initial = Number(document.getElementById("inputInitial").value);
+    let monthly = Number(document.getElementById("inputMonthly").value);
+    let percent = Number(document.getElementById("inputPercent").value);
+    let termDays = Number(document.getElementById("inputTerm").value);
+    let result = calculateDeposit(initial, monthly, percent, termDays).toFixed(2);
+    if (!isNaN(result)) {
+        alert(`Текущая сумма на вкладе ${result}`);
     }
 }
-
-let initial;
-let monthly;
-let percent;
-let termDays;
 
 let buttonElement = document.getElementById("CountButton");
 
